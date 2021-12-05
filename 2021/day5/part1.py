@@ -24,12 +24,12 @@ for coord_set in coords:
         iterables = [i for i in range(min(coord_set[0][1], coord_set[1][1]), max(
             coord_set[0][1], coord_set[1][1]) + 1)]
         for num in iterables:
-            grid[num][coord_set[0][0]] = grid[num][coord_set[0][0]] + 1
+            grid[num][coord_set[0][0]] += 1
     elif coord_set[0][1] == coord_set[1][1]:
         iterables = [i for i in range(min(coord_set[0][0], coord_set[1][0]), max(
             coord_set[0][0], coord_set[1][0]) + 1)]
         for num in iterables:
-            grid[coord_set[0][1]][num] = grid[coord_set[0][1]][num] + 1
+            grid[coord_set[0][1]][num] += 1
 
 
 print(sum(1 for row in grid for num in row if num > 1))
